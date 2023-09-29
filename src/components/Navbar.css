@@ -1,3 +1,12 @@
+:root{
+  --primary-color :rgb(192, 211, 235); 
+  --google-color0 : #fff;
+  --google-color1 : #4286f449;
+  --google-color2 : #ea43255b;
+  --google-color3 : #FBBC05;
+  --google-color4 : #34a853;
+
+}
 body {
     margin: 0;
     padding: 0;
@@ -5,9 +14,9 @@ body {
   
   nav {
     width: 100%;
-    padding: 10px;
+    padding: 10px 2vw ;
     background-color: rgb(250, 251, 251);
-    box-shadow: 5px 10px 15px #64615d;
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
     display: flex;
     justify-content: space-between; /* Add this to separate the logo and social icons */
     z-index: 10;
@@ -16,8 +25,7 @@ body {
   }
   
   .logo {
-    height: 95%;
-    width: 45%;
+    height: 36px;
     padding: 8px 0 10 0px;
   }
   
@@ -33,21 +41,33 @@ body {
   
   .linkedin {
     margin-right: -5px;
-    padding: 0 25px 0 25px;
-    color: rgb(112, 112, 241);
+    font-size: 1.5rem;
+    padding: 0 1.5vw;
+    color: var(--google-color1);
   }
+ 
+ 
   
-  @media only screen and (max-width: 665px) {
+  @media screen and (max-width:480px) { 
     .logo {
-      height: 90%;
-      width: 80%;
-      padding-top: px;
-    }
-    nav {
-      padding: 20px;
+      height: 20px;
     }
     .linkedin {
-      padding: 0 10px 0 10px;
+      font-size: 1.1rem;
+    }
+    nav{
+      padding: 20px 2vw ;
     }
   }
   
+  @media screen and (min-width:480px) and (max-width:640px) { 
+    .logo {
+      height: 28px;
+    }
+    .linkedin {
+      font-size: 1.25rem;
+    }
+    nav{
+      padding: 15px 2vw ;
+    }
+  }

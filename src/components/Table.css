@@ -7,72 +7,97 @@
   margin: 0;
   padding: 0;
 }
+:root{
+  --primary-color :rgb(192, 211, 235); 
+  --google-color0 : #fff;
+  --google-color1 : #4285f4;
+  --google-color1-dimmed : #1b61d2;
 
+  --google-color2 : #EA4225;
+  --google-color3 : #FBBC05;
+  --google-color4 : #34a853;
+
+}
+.table__body{
+  background-color: var(--primary-color);
+  z-index: -2;
+  position: relative;
+}
 .tableinfo {
+  margin-top: 80px;
   font-family: 'Poppins', sans-serif;
-  display: grid;
+  min-height: 100vh;
+  display: flex;
+  margin: 0 10%;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
   color: black;
   font-size: 0.9rem;
-  background-color: rgb(154, 196, 251);
   overflow-x: auto; /* Enable horizontal scrolling on small screens */
   z-index: 1;
 }
 .Texthead,h1{
-  margin-top: 55px;
   justify-content: center;
   font-size: 2rem;
   text-align: center;
   font-weight: 600;
-  color: #0057e7;
+  color: #444444;
 }
 .Para{
+  text-transform: capitalize;
   justify-content: center;
   text-align: center;
-  color: #ffffff;
+  color: var(--google-color1-dimmed);
   font-weight: 800;
   font-size: 1.2rem;
 }
 .input-group{
-  height: 70px;
-  padding: 0 6rem 0 6rem;
-
+  height: 10vh;
+  padding: 0 10px;
+  display: flex;
+  align-self: center;
+  max-width: 500px;
 }
 .form-control{
   margin-top: 1rem;
-  padding-left: 2rem;
-  border-radius: 25px 25px 25px 25px;
+  border-radius: 25px;
+}
+
+/* Table */
+.table__container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 table {
   border-collapse: collapse;
-  box-shadow: 0 5px 10px rgb(164, 145, 145);
   background-color: rgba(253, 247, 247, 0.969);
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
   text-align: left;
   overflow: hidden;
-  border: 2px solid black;
-  width: 80%; /* Make the table 100% width of its container */
-  max-width: 80%; /* Ensure the table doesn't overflow its container */
-  margin: 70px 0px 80px 90px ;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 700px;
+  border: 2px solid var(--google-color0);
 }
 
-.thead {
-
-  box-shadow: 0 5px 10px rgb(170, 151, 151);
+.thead{
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
-.thclass {
-  padding: 1rem 3rem; /* Adjust the padding for smaller screens */
+.thead > tr > th {
   text-transform: uppercase;
-  letter-spacing: 0.1rem;
-  font-size: 1.1rem;
-  color: rgb(112, 112, 241);
+  padding: 5px;
+  text-align: center;
+  color: var(--google-color1);
   font-weight: 600;
 }
 
 .tdclass {
-  padding: 1rem 3rem; /* Adjust the padding for smaller screens */
+  text-align: center;
+  font-size: 0.85rem;
+  padding: 10px 0 ;
   font-weight: 500;
 }
 
@@ -101,131 +126,93 @@ table {
 }
 
 table tr:nth-child(even) {
-  background-color: rgba(128, 128, 128, 0.299);
+  background-color: rgba(128, 128, 128, 0.13);
 }
+
 
 /* Responsive Styles */
-@media (max-width: 1336px) {
-  .thclass,
-  .tdclass {
-    padding: 1rem; /* Adjust the padding for smaller screens */
-    font-size: 0.6rem; /* Adjust the font size for smaller screens */
+@media screen and (max-width:480px) { 
+  .tableinfo{
+    margin:5% ;
   }
-   
-}
-@media (max-width: 705px) and (min-width:614px) {
-  
-  table{  
-   margin: 30px 80px 60px 60px;
-   position: relative;
-   right: 17px;
- }  
-}
-@media (max-width: 614px) and (min-width:567px) {
-  
-  .thclass,
-  .tdclass {
-    padding: 0.5rem; /* Adjust the padding for smaller screens */
-    font-size: 0.6rem; /* Adjust the font size for smaller screens */
-  }  
-}
-
-
-@media (max-width: 565px) and (min-width : 494px){
-  .thclass,
-  .tdclass {
-    margin-top: 10px;
-    padding:  0.3rem;
-    font-size: 0.6rem; 
+  .tdclass{
+    font-size: 0.5rem;
   }
-   table{  
-    margin: 30px 80px 60px 60px;
-    position: relative;
-    left: 17px;
-  }  
-}
-
-@media (max-width: 494px) and (min-width:446px) {
-  
-  .thclass,
-  .tdclass {
-    margin-top: 10px;
-    padding:  0.25rem;
-    font-size: 0.6rem; 
+  .thead > tr > th{
+    font-size: 0.6rem;
+    padding: 2px;
   }
-   table{  
-    margin: 30px 80px 60px 60px;
-    position: relative;
-    left: 10px;
-  }  
-}
-@media (max-width: 446px) and (min-width:427px) {
-  .thclass,
-  .tdclass {
-    margin-top: 10px;
-    padding:  0.2rem;
-    font-size: 0.6rem; 
+  .input-group{
+    height: 37px;
   }
-   table{  
-    margin: 30px 80px 60px 60px;
-    position: relative;
-    right: 20px;
-  }
-     
-}
-@media (max-width: 427px) and (min-width:404px) {
-  .thclass,
-  .tdclass {
-    margin-top: 10px;
-    padding:  0.2rem;
-    font-size: 0.6rem; 
-  }
-   table{  
-    margin: 30px 80px 60px 60px;
-    position: relative;
-    right: 20px;
-  }   
-}
-@media  (max-width: 404px) and (min-width:376px){
-  .thclass,
-  .tdclass {
-    margin-top: 10px;
-    padding:  0.16rem;
-    font-size: 0.6rem; 
-  }
-  table{  
-    margin: 30px 80px 60px 60px;
-    position: relative;
-    right: 20px;
-  }  
-}
-@media  (max-width: 376px) and (min-width:300px) {
-  .tdclass {
-    margin-top: 10px;
-    padding:  0.1rem;
-    font-size: 0.5rem; 
-    align-items: center;
-  }
-  .thclass{
-    font-size: 0.4rem; 
-    margin-top: 10px;
-    padding:  0.2rem;
-    align-items: center;  
- }
-  table{  
-    margin: 0px 80px 60px 60px;
-    position: relative;
-    right: 20px;
-  } 
   .form-control{
-    margin-top: 1rem;
-    padding-left: 1rem;
-    border-radius: 25px 25px 25px 25px;
-    height: 40%;
-    width: 45%;
-    } 
-  .form-control::placeholder{
-    font-size: 12px;
-    color: rgb(166, 166, 166);
+    font-size: 0.7rem;
+  }
+}
+
+@media screen and (min-width:480px) and (max-width:640px) { 
+  .tableinfo{
+    margin:5% ;
+  }
+  .tdclass{
+    font-size: 0.7rem;
+  }
+  .thead > tr > th{
+    font-size: 0.8rem;
+    padding: 4px;
+  }
+  .input-group{
+    height: 50px;
+  }
+  .form-control{
+    font-size: 0.7rem;
+  }
+}
+@media screen and (max-width:800px) {
+  #img1,#img2{
+    display: none;
+  }
+  #img3{
+    display: block;
+    top: 8%;
+    left: 0;
+    transform: translateX(-10%) rotate(45deg);
+    opacity: 0.35;
+    z-index: -1;
+    position: fixed;
+    height: 30%;
+  }
+  #img4{
+    display: block;
+    bottom: 0;
+    right: 0;
+    transform: translateY(20%);
+    opacity: 0.35;
+    z-index: -1;
+    position: fixed;
+    height: 30%;
+  }
+}
+
+/* ADDONS */
+#img1{
+  bottom: 0;
+  right: 0;
+  transform: translateX(30%) translateY(20%);
+  opacity: 0.6;
+  z-index: -1;
+  position: fixed;
+}
+#img2{
+  bottom: 0;
+  left: 0;
+  transform: translateX(-30%) translateY(-20%);
+  opacity: 0.6;
+  z-index: -1;
+  position: fixed;
+}
+@media screen and (min-width:800px){
+  #img3,#img4{
+    display: none;
   }
 }
