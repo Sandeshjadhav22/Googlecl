@@ -14,6 +14,7 @@ const Table = () => {
      {id: 3, NAME: 'Viraj Sharma', COURSES: 4, SKILL: 4, GEN_AI: 1, DUE_DATE:'18/10/23', STATUS: 'completed'},
     {id: 4, NAME: 'Rohit Koli', COURSES: 4, SKILL: 4, GEN_AI: 1, DUE_DATE:'18/10/23', STATUS: 'not completed'},
      {id: 5, NAME: 'Akkash Chopra', COURSES: 4, SKILL: 4, GEN_AI: 1, DUE_DATE:'18/10/23', STATUS: 'not completed'},
+     {id: 6, NAME: 'Rohan Prajapati', COURSES: 4, SKILL: 4, GEN_AI: 1, DUE_DATE:'18/10/23', STATUS: 'completed'},
    ]
 
    const [value,setValue] = useState('');
@@ -34,27 +35,38 @@ const Table = () => {
 
   return (
     <div className="table__body">
+      
+      <div className="background_images">
+
       <img src={image1} id="img1" alt="Image 1" />
       <img src={image2} id="img2" alt="Image 2" />
       <img src={image3} id="img3" alt="Image 3" />
       <img src={image4} id="img4" alt="Image 4" />
 
+      </div>
+
       <div className="tableinfo">
-        <div className="Texthead">
-          <h1>Google Cloud Study Jams 23-24</h1>
-          <p className="Para">with Dmce</p>
-        </div>
-        <div className="input-group mb-4">
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Search your name"
-            aria-label="Username"
-            aria-describedby="basic-addon1"
-            value={value}
-            onChange={filterData}
-          />
-        </div>
+
+    <div className="table-upper">
+      <div className="Texthead">
+            <h1>Google Cloud Study Jams 23-24</h1>
+            <p className="Para">with Dmce</p>
+          </div>
+          <div className="input-group mb-4">
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Search your name"
+              aria-label="Username"
+              aria-describedby="basic-addon1"
+              value={value}
+              onChange={filterData}
+            />
+    
+          </div>
+      </div>
+
+       
         <div className="table__container">
           <table>
             <thead className="thead">
@@ -79,9 +91,9 @@ const Table = () => {
                         <td className="tdclass">{data.SKILL}</td>
                         <td className="tdclass">{data.GEN_AI}</td>
                         <td className="tdclass">{data.DUE_DATE}</td>
-                        <td className="tdclass">{data.STATUS}</td>
+                        {/* <td className="tdclass">{data.STATUS}</td> */}
                         <td className="tdclass">
-                          <p className={data.STATUS}></p>
+                          <p className={data.STATUS}>{data.STATUS}</p>
                         </td>
                       </tr>
                     );
@@ -95,9 +107,9 @@ const Table = () => {
                         <td className="tdclass">{data.SKILL}</td>
                         <td className="tdclass">{data.GEN_AI}</td>
                         <td className="tdclass">{data.DUE_DATE}</td>
-                        <td className="tdclass">{data.STATUS}</td>
+                        {/* <td className="tdclass">{data.STATUS}</td> */}
                         <td className="tdclass">
-                          <p className={data.STATUS}></p>
+                          <p className={data.STATUS}>{data.STATUS}</p>
                         </td>
                       </tr>
                     );

@@ -20,9 +20,23 @@
 }
 .table__body{
   background-color: var(--primary-color);
-  z-index: -2;
+  /* z-index: 0; */
+  /* pointer-events: all; */
   position: relative;
+
 }
+
+
+.background_images{
+  z-index:0;
+  position: relative;
+  pointer-events: none;
+}
+
+.background_images img{
+  pointer-events: none;
+}
+
 .tableinfo {
   margin-top: 80px;
   font-family: 'Poppins', sans-serif;
@@ -63,12 +77,22 @@
   border-radius: 25px;
 }
 
+.table-upper{
+  position: absolute;
+  top: -3.1%;
+  left:50%;
+  transform: translate(-50%,50%);
+}
+
 /* Table */
 .table__container{
   display: flex;
   justify-content: center;
+  margin-top: 270px;
   align-items: center;
 }
+
+
 
 table {
   border-collapse: collapse;
@@ -80,7 +104,12 @@ table {
   width: 100%;
   max-width: 700px;
   border: 2px solid var(--google-color0);
+  position: absolute;
+   top: 43%;
+
 }
+
+
 
 .thead{
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
@@ -117,12 +146,19 @@ table {
   background-color: rgb(145, 248, 164);
   color: rgba(15, 81, 3, 0.539);
   font-weight: 700;
+  color:white;
+  border-radius: 20px;
+  border:1px solid rgba(0,0,0,0.5);
+  margin-top: 10px;
 }
 
-.notcompleted {
-  background-color: rgb(250, 168, 179);
+.not.completed {
+  background-color: rgb(255, 49, 76);
   color: rgba(112, 6, 29, 0.364);
   font-weight: 700;
+  color:white;
+  border:1px solid rgba(0,0,0,0.5);
+  
 }
 
 table tr:nth-child(even) {
@@ -140,13 +176,37 @@ table tr:nth-child(even) {
   }
   .thead > tr > th{
     font-size: 0.6rem;
-    padding: 2px;
+    padding: 1px;
+  }
+  .Texthead >h1{
+    font-size:  1.3rem
   }
   .input-group{
     height: 37px;
   }
   .form-control{
     font-size: 0.7rem;
+  }
+  table{
+    max-width: 300px;
+  }
+  .tdclass{
+    padding: 4px 0;
+  }
+  .not.completed {
+    background-color: rgb(255, 49, 76);
+    color: rgba(112, 6, 29, 0.364);
+    font-weight: 700;
+    color: white;
+    border: 1px solid rgba(0,0,0,0.5);
+    font-size: 5.4px;
+    margin-top: 13px;
+    padding: 3px;
+  }
+  .completed{
+    font-size: 5.4px;
+    margin-top: 13px;
+    padding: 3px;
   }
 }
 
@@ -200,7 +260,7 @@ table tr:nth-child(even) {
   right: 0;
   transform: translateX(30%) translateY(20%);
   opacity: 0.6;
-  z-index: -1;
+  z-index: -4;
   position: fixed;
 }
 #img2{
@@ -208,7 +268,7 @@ table tr:nth-child(even) {
   left: 0;
   transform: translateX(-30%) translateY(-20%);
   opacity: 0.6;
-  z-index: -1;
+  z-index: -4;
   position: fixed;
 }
 @media screen and (min-width:800px){
