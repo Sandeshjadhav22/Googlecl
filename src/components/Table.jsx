@@ -4,18 +4,12 @@ import image1 from './images/image1.png';
 import image2 from './images/image2.png';
 import image3 from './images/image3.png';
 import image4 from './images/image4.png';
+import { dummyData } from './dummyData';
 
 
 const Table = () => {
   // this is dummyData
-  const dummyData = [
-    {id: 1, NAME: 'Manas Kulkarni', COURSES: 4, SKILL: 4, GEN_AI: 1, DUE_DATE:'18/10/23', STATUS: 'not completed'},
-     {id: 2, NAME: 'Sandesh Jadhav', COURSES: 4, SKILL: 4, GEN_AI: 1, DUE_DATE:'18/10/23', STATUS: 'completed '},
-     {id: 3, NAME: 'Viraj Sharma', COURSES: 4, SKILL: 4, GEN_AI: 1, DUE_DATE:'18/10/23', STATUS: 'completed'},
-    {id: 4, NAME: 'Rohit Koli', COURSES: 4, SKILL: 4, GEN_AI: 1, DUE_DATE:'18/10/23', STATUS: 'not completed'},
-     {id: 5, NAME: 'Akkash Chopra', COURSES: 4, SKILL: 4, GEN_AI: 1, DUE_DATE:'18/10/23', STATUS: 'not completed'},
-     {id: 6, NAME: 'Rohan Prajapati', COURSES: 4, SKILL: 4, GEN_AI: 1, DUE_DATE:'18/10/23', STATUS: 'completed'},
-   ]
+  
 
    const [value,setValue] = useState('');
        const [dataSource,setDataSource] = useState(dummyData);
